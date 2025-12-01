@@ -26,7 +26,6 @@ function setPasswordInput(password, index) {
         setHasLowerCase(value !== value.toUpperCase());
         setHasDigit(digitRegex.test(value));
         setHasSpecialChar(specialCharsRegex.test(value));
-
     }
 
     return (
@@ -100,7 +99,7 @@ export default function AccountForm(props) {
     
     return (
         <>
-            <form className="account-form">
+            <form className="account-form" action={props.action}>
                 <h1>Create an Account</h1>
                 {inputs}
                 <button>CREATE</button>
