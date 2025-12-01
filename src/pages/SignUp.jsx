@@ -1,32 +1,35 @@
 import React from "react";
 
-import AccountInput from "../components/AccountInput";
+import Header from "../components/Header";
+import AccountForm from "../components/AccountForm";
+
+
+function createAccount(formData) {
+    const accountDetails = {};
+    formData.forEach((value, key) => {
+      accountDetails[key] = value;
+    });
+    console.log(accountDetails);
+}
 
 export default function SignUp() {
+    const buttons = [{
+        "text": "LOGIN",
+        "action" : null,
+        "link": null
+    }]
+
     const inputs = [
-        {
-            "name": "firstName",
-            "type": "text",
-            "placeholder": "First Name"
-        },
-        {
-            "name": "lastName",
-            "type": "text",
-            "placeholder": "Last Name"
-        },
-        {
-            "name": "email",
-            "type": "text",
-            "placeholder": "Email Address"
-        },
-        {
-            "name": "password",
-            "type": "password",
-            "placeholder": "Password"
-        }
-    ];
+        ["First Name", "Last Name"],
+        "Email",
+        "Password",
+        "Confirm Password"
+    ]
 
     return(
-        <AccountInput inputs={inputs} buttons={[]} page="signUp"/>
+        <>
+            <Header buttons={buttons} class="account-buttons"/>
+            <AccountForm inputs={inputs} buttons={buttons} action={createAccount}/>
+        </>
     )
 }
