@@ -3,8 +3,9 @@ import { ToastContainer } from "react-toastify";
 
 import Home from "./pages/Home";
 import Main from "./components/Main";
-import SignUp from "./pages/SignUp";
-import Verification from "./pages/Verification";
+import SignUp from "./pages/accounts/SignUp";
+import Verification from "./pages/accounts/Verification";
+import Login from "./pages/accounts/Login";
 
 import Error from "./pages/Error";
 // import Login from "./pages/Login";
@@ -32,6 +33,7 @@ export default function App() {
                 <Route path="accounts">
                     <Route path="create" element={<SignUp />} />
                     <Route path="verification" element={<Verification />} />
+                    <Route path="login" element={<Login />} />
                 </Route>
                 <Route path="error">
                     <Route index element={<Error />} />

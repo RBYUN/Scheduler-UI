@@ -2,8 +2,8 @@ import React from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 
-import Header from "../components/Header";
-import AccountForm from "../components/AccountForm";
+import Header from "../../components/Header";
+import AccountForm from "../../components/AccountForm";
 
 export default function SignUp() {
     let navigate = useNavigate();
@@ -49,7 +49,7 @@ export default function SignUp() {
     const buttons = [{
         "text": "LOGIN",
         "action" : null,
-        "link": null
+        "link": "../login"
     }]
 
     const inputs = [

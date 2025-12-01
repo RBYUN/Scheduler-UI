@@ -12,7 +12,7 @@ export default function Home() {
         {
             "text": "LOGIN",
             "action" : null,
-            "link": null
+            "link": "accounts/login"
         }
     ];
 
