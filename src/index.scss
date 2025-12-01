@@ -17,8 +17,9 @@ $quinary-color-light: #E8C7CA;
 
 body {
     margin: auto;
-    background: $quaternary-color;
-    // background: linear-gradient(157deg,rgba(83, 28, 179, 1) 0%, rgba(222, 185, 216, 1) 100%);
+    background: linear-gradient(157deg,rgba(83, 28, 179, 1) 0%, rgb(66, 190, 214) 100%);
+    background-repeat: no-repeat;
+    height: 100%;
 }
 
 @mixin flex($gap: 1em, $direction: row) {
@@ -109,12 +110,13 @@ header {
         margin-left:20px;
         flex: 1;
     }
+
 }
 
-.account-input:invalid {
-    background: rgb(215, 103, 103);
-    border-radius:20px;
-}
+// .account-input:invalid {
+//     background: rgb(215, 103, 103);
+//     border-radius:20px;
+// }
 
 .password-policy-box {
     background: rgb(159, 159, 159);

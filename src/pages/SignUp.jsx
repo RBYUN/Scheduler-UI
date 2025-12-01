@@ -1,15 +1,21 @@
 import React from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 import Header from "../components/Header";
 import AccountForm from "../components/AccountForm";
-
 
 function createAccount(formData) {
     const accountDetails = {};
     formData.forEach((value, key) => {
       accountDetails[key] = value;
     });
-    console.log(accountDetails);
+
+    if (accountDetails.password !== accountDetails.confirmpassword) {
+        toast.error("Passwords do not match!");
+    } else {
+        // pass into backend api now.
+        <Navigate to="/accounts/verification" replace />
+    }
 }
 
 export default function SignUp() {

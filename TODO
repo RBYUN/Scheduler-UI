@@ -1,0 +1,5 @@
+Password requirements box should open without moving password line
+Password requirements box should specify only alphanumeric characters with the special chars
+
+Create Account button should reset password.
+Maybe this can be done by passing in form inputs as a state to account form.

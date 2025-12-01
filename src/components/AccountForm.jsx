@@ -41,7 +41,8 @@ function setPasswordInput(password, index) {
             onChange={passwordInput}
             value={currentPass}
             onFocus={() => setShowPolicy(true)}
-            onBlur={() => setShowPolicy(false)}>
+            onBlur={() => setShowPolicy(false)}
+            required>
         </input>
         <PasswordPolicy 
             showPolicy={showPolicy} 
@@ -70,7 +71,8 @@ function setInputFields(inputProps) {
                                 id={name} 
                                 type="text" 
                                 placeholder={groupInput} 
-                                key={groupIndex + index + 1}>
+                                key={groupIndex + index + 1}
+                                required>
                             </input>
                         )})}
                 </div>
@@ -88,7 +90,8 @@ function setInputFields(inputProps) {
                     id={name} 
                     type={input === "Confirm Password" ? "password" : "text"} 
                     placeholder={input} 
-                    key={index}>
+                    key={index}
+                    required>
                 </input>)}}
     ));
 }
