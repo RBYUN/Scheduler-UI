@@ -56,7 +56,7 @@ function setPasswordInput(password, index) {
     )
 }
 
-function setInputFields(inputProps) {
+function setInputFields(inputProps, isPasswordBox) {
     return( 
         inputProps.map((input, index) => {
         if (Array.isArray(input)) {
@@ -77,7 +77,7 @@ function setInputFields(inputProps) {
                         )})}
                 </div>
             )
-        } else if (input === "Password") {
+        } else if (input === "Password" && isPasswordBox === true) {
             return (
                 setPasswordInput(input, index)
             )
@@ -88,7 +88,7 @@ function setInputFields(inputProps) {
                     className="account-input" 
                     name={name} 
                     id={name} 
-                    type={input === "Confirm Password" ? "password" : "text"} 
+                    type={input === "Confirm Password" || input === "Password" ? "password" : "text"} 
                     placeholder={input} 
                     key={index}
                     required>
@@ -98,14 +98,14 @@ function setInputFields(inputProps) {
 
 export default function AccountForm(props) {
     
-    const inputs = setInputFields(props.inputs);
+    const inputs = setInputFields(props.inputs, props.passwordBox);
     
     return (
         <>
             <form className="account-form" action={props.action}>
-                <h1>Create an Account</h1>
+                <h1>{props.title}</h1>
                 {inputs}
-                <button>CREATE</button>
+                <button>{props.button}</button>
             </form>
         </>
     )

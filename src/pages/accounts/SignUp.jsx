@@ -62,7 +62,7 @@ export default function SignUp() {
     return(
         <>
             <Header buttons={buttons} class="account-buttons"/>
-            <AccountForm inputs={inputs} buttons={buttons} action={createAccount}/>
+            <AccountForm inputs={inputs} action={createAccount} title="Create an Account" button="CREATE" passwordBox={true}/>
         </>
     )
 }
