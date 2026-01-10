@@ -1,0 +1,170 @@
+$primary-color: #531CB3;
+$secondary-color: #944BBB;
+$tertiary-color: #AA7BC3;
+$quaternary-color: #CC92C2;
+$quinary-color: #DBA8AC;
+// https://coolors.co/531cb3-944bbb-aa7bc3-cc92c2-dba8ac
+$primary-color-light: #8A56E5;
+$secondary-color-light: #B989D2;
+$tertiary-color-light: #C7A9D7;
+$quaternary-color-light: #DEB9D8;
+$quinary-color-light: #E8C7CA;
+
+* {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 400;
+}
+
+body {
+    margin: auto;
+    background: linear-gradient(157deg,rgb(109, 52, 207) 0%, rgb(66, 190, 214) 100%);
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+@mixin flex($gap: 1em, $direction: row) {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: $gap;
+    justify-content: space-between;
+    flex-direction: $direction;
+}
+
+header {
+    // @include flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.051);
+    
+    h1 {
+        flex-grow: 1;
+        justify-self: center;
+        font-weight: 700;
+    }
+
+    div {
+        justify-self: end;
+    }
+
+}
+
+.main-body {
+    @include flex(1rem, column);
+    align-items: center;
+    width: 80rem;
+    margin: auto;
+    justify-content: center;
+    height: 80%;
+
+    &-glass {
+        @extend .main-body;
+        background: linear-gradient(157deg,rgba(192, 192, 194, 0.20) 0%, rgba(255, 255, 255, 0.10) 100%);
+        width: 60rem;
+        height: 30rem;
+        margin-top: 12rem;
+        border-radius: 70px; 
+    }
+
+    h1 {
+        font-size: 44px;
+        font-weight: bolder;
+    }
+}
+
+
+.user-box {
+    @include flex;
+    padding-right: 1rem;
+}
+
+.account-buttons {
+    background: $secondary-color-light;
+    border: none;
+    border-radius: 10px;
+    width: 5rem;
+    font-weight: 500;
+}
+
+.account-buttons:hover {
+    background: $tertiary-color;
+}
+
+.account-form {
+    @include flex(1rem, column);
+    height: 70%;
+    justify-content: center;
+    font-size: 36px;
+
+    h1 {
+        font-weight: 300;
+    }
+
+    button {
+        background: $quinary-color-light;
+        border-radius: 50px;
+        width: 11rem;
+        height: 3rem;
+        font-size: 20px;
+        border: none;
+    }
+
+    button:hover {
+        font-weight: bolder;
+        background: $quinary-color;
+    }
+}
+
+.account-input {
+    text-align: center;
+    width: 32rem;
+    height: 5rem;
+    font-size: 24px;
+    outline: none;
+    border-width: 0 0 2px;
+    border-color: rgb(22, 19, 19);
+    background: none;
+    border-radius: 20px 20px 0 0;
+
+
+    &-multiple {
+        @extend .account-input;
+        width: 15rem;
+        margin-right: 1rem;
+        margin-left:1rem;
+        flex: 1;
+    }
+
+    &-multiple::placeholder {
+        color: black;
+    }
+
+}
+
+.account-input::placeholder {
+    color: black;
+}
+
+// .account-input:invalid {
+//     background: rgb(215, 103, 103);
+//     border-radius:20px;
+// }
+
+.password-policy-box {
+    background: rgb(159, 159, 159);
+    width: 31rem;
+    border-radius: 40px;
+    font-size: 16px;
+    list-style-type: none;
+    color: rgb(165, 12, 12);
+
+    ul {
+        list-style-type: none;
+    }
+
+}
+
+.password-policy-pass {
+    color: rgb(11, 112, 11)
+}
