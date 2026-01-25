@@ -5,9 +5,14 @@ type Button = {
     id: string;
 };
 
+type Section = {
+    text: string;
+    link: string;
+    id: string;
+}
+
 type UserBoxProps = {
     buttons?: Button[];
-    className?: string;
 };
 
 type AccountFormInput = {
@@ -31,4 +36,4 @@ type AccountDetails = {
   confirmPassword: string;
 };
 
-export type { Button, UserBoxProps, AccountFormInput, AccountFormField, AccountDetails };
+export type { Button, Section, UserBoxProps, AccountFormInput, AccountFormField, AccountDetails };

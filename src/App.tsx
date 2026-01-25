@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
-import Home from "./pages/Home.tsx";
+import Home from "./pages/home/Home.tsx";
 import Main from "./components/Main.tsx";
-import SignUp from "./pages/accounts/SignUp.tsx";
-import Verification from "./pages/accounts/Verification.tsx";
-import Login from "./pages/accounts/Login.tsx";
+import SignUp from "./pages/home/accounts/SignUp.tsx";
+import Verification from "./pages/home/accounts/Verification.tsx";
+import Login from "./pages/home/accounts/Login.tsx";
 
 import Error from "./pages/Error.tsx";
 // import Login from "./pages/Login";

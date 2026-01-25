@@ -17,7 +17,7 @@ $quinary-color-light: #E8C7CA;
 
 body {
     margin: auto;
-    background: linear-gradient(157deg,rgb(109, 52, 207) 0%, rgb(66, 190, 214) 100%);
+    //background: linear-gradient(157deg,rgb(109, 52, 207) 0%, rgb(66, 190, 214) 100%);
     background-repeat: no-repeat;
     height: 100%;
 }
@@ -36,18 +36,29 @@ header {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.051);
-    
+    background: linear-gradient(157deg,rgba(156, 155, 155, 0.22) 0%, rgba(213, 212, 212, 0.28) 100%);
+
     h1 {
         flex-grow: 1;
-        justify-self: center;
+        justify-self: left;
+        padding-left: 1rem;
+        font-weight: 900;
+    }
+
+    h2 {
         font-weight: 700;
     }
 
     div {
+        flex-grow: 1;
         justify-self: end;
     }
 
+}
+
+.section-links {
+    @include flex(1rem, row);
+    
 }
 
 .main-body {
@@ -80,15 +91,18 @@ header {
 }
 
 .account-buttons {
-    background: $secondary-color-light;
+    background: black;
+    color: white;
     border: none;
     border-radius: 10px;
     width: 5rem;
+    height: 1.5rem;
     font-weight: 500;
 }
 
 .account-buttons:hover {
     background: $tertiary-color;
+    // background: red;
 }
 
 .account-form {
@@ -102,7 +116,8 @@ header {
     }
 
     button {
-        background: $quinary-color-light;
+        background: black;
+        color: white;
         border-radius: 50px;
         width: 11rem;
         height: 3rem;
@@ -112,7 +127,7 @@ header {
 
     button:hover {
         font-weight: bolder;
-        background: $quinary-color;
+        background: $tertiary-color;
     }
 }
 

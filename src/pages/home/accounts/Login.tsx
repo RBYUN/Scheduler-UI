@@ -1,10 +1,10 @@
 import { useSearchParams } from "react-router";
 import { toast } from "react-toastify";
 
-import Header from "../../components/Header.tsx";
-import AccountForm from "../../components/AccountForm.tsx";
+import Header from "../../../components/Header.tsx";
+import AccountForm from "../../../components/AccountForm.tsx";
 import { useEffect } from "react";
-import type { AccountFormField, Button } from "../../types/index.ts";
+import type { AccountFormField, Button } from "../../../types/index.ts";
 
 export default function Login() {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -59,7 +59,7 @@ export default function Login() {
 
     return(
         <>
-            <Header buttons={buttons} className="account-buttons"/>
+            <Header buttons={buttons}/>
             <AccountForm inputs={inputs} title="Welcome Back" button="LOGIN" passwordBox={false}/>   
         </>
     )

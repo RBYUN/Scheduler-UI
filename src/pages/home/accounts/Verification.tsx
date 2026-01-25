@@ -1,4 +1,4 @@
-import Header from "../../components/Header.tsx";
+import Header from "../../../components/Header.tsx";
 export default function Verification() {
     return (
         <>
