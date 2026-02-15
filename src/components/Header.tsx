@@ -1,14 +1,28 @@
+import type { Button, Section } from "../types/index.ts";
 import UserBox from "./UserBox.tsx";
-import type { UserBoxProps } from "../types/index.ts"
 
-export default function Header({ buttons, className }: UserBoxProps ) {
+type HeaderProps = {
+    buttons?: Button[];
+    sections?: Section[];
+}
 
+export default function Header({ buttons, sections }: HeaderProps ) {
+
+    function routePage() {
+
+    }
+    
+    const sectionLinks = sections?.map(section => {
+            return <h2 key={section.text}>{section.text}</h2>
+    });
     return(
         <>
             <header>
-                <div></div>
-                <h1><em>TimeBlock</em></h1>
-                { buttons ? <UserBox buttons={buttons} className={className}/> : null }
+                <h1>align:TIME</h1>
+                <div className="user-box">
+                    {sectionLinks}
+                </div>
+                { buttons ? <UserBox buttons={buttons}/> : null }
             </header>
         </>
     );

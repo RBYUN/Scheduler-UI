@@ -1,6 +1,7 @@
 import { Outlet } from "react-router";
-import type { Button } from "../types/index.ts";
-import Header from "../components/Header.tsx";
+import type { Button } from "../../types/index.ts";
+import Header from "../../components/Header.tsx";
+import { sections } from "./data/index.ts";
 
 export default function Home() {
 
@@ -20,7 +21,7 @@ export default function Home() {
 
     return(
         <>
-            <Header buttons={buttons} className="account-buttons"/>
+            <Header buttons={buttons} sections={sections}/>
             <Outlet />
         </>
     );
