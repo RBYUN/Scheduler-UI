@@ -13,7 +13,7 @@ export default function Header({ buttons, sections }: HeaderProps ) {
     }
     
     const sectionLinks = sections?.map(section => {
-            return <h2>{section.text}</h2>
+            return <h2 key={section.text}>{section.text}</h2>
     });
     return(
         <>

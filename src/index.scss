@@ -86,7 +86,7 @@ header {
 
 
 .user-box {
-    @include flex;
+    @include flex(7rem, row);
     padding-right: 1rem;
 }
 
