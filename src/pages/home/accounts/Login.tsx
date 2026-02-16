@@ -5,7 +5,7 @@ import { sections } from "../data/index.ts";
 import Header from "../../../components/Header.tsx";
 import { useEffect } from "react";
 import type { Button } from "../../../types/index.ts";
-import { useForm } from "react-hook-form";
+import { useForm, type FieldErrors } from "react-hook-form";
 
 export default function Login() {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -49,6 +49,10 @@ export default function Login() {
 
     const { register, handleSubmit } = useForm();
 
+    function onError(errors: FieldErrors<{ firstName: string; lastName: string; email: string; password: string; confirmPassword: string; }>) {
+        toast.error(Object.values(errors)[0].message as string);
+    }
+
     return(
         <>
             <Header buttons={buttons} sections={sections}/>
@@ -58,7 +62,10 @@ export default function Login() {
                     handleSubmit(
                         (data) => {
                             console.log(data);
-                })}>
+                            },
+                        (errors) => {
+                            onError(errors)
+                        })}>
                 <h1>Welcome Back</h1>
                 <input {...register("email", {
                     required: true,

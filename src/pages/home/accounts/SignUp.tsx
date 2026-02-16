@@ -58,7 +58,6 @@ export default function SignUp() {
                             }, 
                         (errors) => {
                             onError(errors);
-                            console.log(errors)
                         })}>
 
                 <h1>Create a New Account</h1>
